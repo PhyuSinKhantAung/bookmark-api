@@ -3,6 +3,8 @@ import {
   Controller,
   Delete,
   Get,
+  HttpCode,
+  HttpStatus,
   Param,
   ParseIntPipe,
   Patch,
@@ -50,6 +52,7 @@ export class BookmarkController {
   }
 
   @Delete(':id')
+  @HttpCode(HttpStatus.NO_CONTENT)
   deleteBookmarkById(
     @GetUser('id') userId: number,
     @Param('id', ParseIntPipe) bookmarkId: number,

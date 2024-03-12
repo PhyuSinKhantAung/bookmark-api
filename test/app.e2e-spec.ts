@@ -205,7 +205,7 @@ describe('App e2e', () => {
           .spec()
           .delete('/bookmarks/$S{bookmarkId}')
           .withBearerToken('$S{userToken}')
-          .expectStatus(200)
+          .expectStatus(204)
           .expectBody('')
           .inspect();
       });
